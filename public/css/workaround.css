@@ -10,3 +10,8 @@
   background-color: rgb(234, 142, 5); 
   color: #fff;
 }
+
+#fh5co-header > .navbar {
+  background-color: #f5f5f5;
+  border-bottom:1px solid #CCC;
+}
