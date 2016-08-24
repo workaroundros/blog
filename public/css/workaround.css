@@ -1,0 +1,12 @@
+.black {
+  color: #000;
+}
+
+.orange {
+  color: rgb(234, 142, 5);
+}
+
+.tagged_orange {
+  background-color: rgb(234, 142, 5); 
+  color: #fff;
+}

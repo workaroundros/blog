@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workaround Blog - Coworking en Rosario - Espacio compartido de trabajo - Shared office space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Workaround Blog - Coworking en Rosario - Espacio compartido de trabajo - Shared office space" />
+  <meta name="keywords" content="Workaround Blog - Coworking en Rosario - Espacio compartido de trabajo - Shared office space" />
+  <meta name="author" content="Workaround.com.ar" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  <body>
+    
+  <header id="fh5co-header" role="banner">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header"> 
+        <!-- Mobile Toggle Menu Button -->
+        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <h1><span class="black">Workaround</span><span class="tagged_orange">/blog</span></h1>
+        </div>
+        <div id="fh5co-navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://workaround.com.ar"><span>Home <span class="border"></span></span></a></li>
+            <li><a href="/"><span>Blog<span class="border"></span></span></a></li>
+            <li><a href="http://workaround.com.ar/#plen"><span>Que talle sos?<span class="border"></span></span></a></li>
+            <li><a href="http://workaround.com.ar/#write"><span>Escribinos<span class="border"></span></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END .header -->
+
+    <aside class="fh5co-page-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <% if @title %>
+              <h1 class="fh5co-page-heading-lead">
+                <%= @title %>
+                <span class="fh5co-border"></span>
+              </h1>  
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  <div id="fh5co-main">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= content %>
+
+<!--
+          <div class="fh5co-sidebox">
+            <h3 class="fh5co-sidebox-lead">Check list</h3>  
+            <ul class="fh5co-list-check">
+              <li>Lorem ipsum dolor sit.</li>
+              <li>Nostrum eveniet animi sint.</li>
+              <li>Dolore eligendi, porro ipsam.</li>
+              <li>Repudiandae voluptate dolorem voluptas.</li>
+              <li>Voluptate cupiditate, est laborum?</li>
+            </ul>
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fh5co-spacer fh5co-spacer-lg"></div>
+
+  <footer id="fh5co-footer">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="fh5co-footer-widget">
+            <h2 class="fh5co-footer-logo">Workaround<span class="orange">blog</span></h2>
+            <p>
+            El <span class="orange">compartir</span> un espacio, genera <span class="orange">ideas</span>. Las ideas, generan <span class="orange">inspiraci&oacute;n</span>. La inspiraci&oacute;n, gener&oacute; <span class="orange">Workaround</span>.
+            </p>
+          </div>
+          <div class="fh5co-footer-widget">
+            <ul class="fh5co-social">
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-instagram"></i></a></li>
+              <li><a href="#"><i class="icon-linkedin"></i></a></li>
+              <li><a href="#"><i class="icon-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6">
+          <div class="fh5co-footer-widget top-level">
+            <h4 class="fh5co-footer-lead ">Workaround</h4>
+            <ul>
+              <li><a href="http://workaround.com.ar">Home</a></li>
+              <li><a href="http://workaround.com.ar/#plen">Que talle sos?</a></li>
+              <li><a href="http://workaround.com.ar/#write">Escribinos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row fh5co-row-padded fh5co-copyright">
+        <div class="col-md-5">
+          <p><%= Date.today.year.to_s %> - Workaround<span class="orange">blog</span></p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- jQuery -->
+  <script src="/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- Main JS -->
+  <script src="/js/main.js"></script>
+
+  <!-- Google Webfonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/workaround.css">
+  <!-- Modernizr JS -->
+  <script src="/js/modernizr-2.6.2.min.js"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  </body>
+</html>
