@@ -38,7 +38,7 @@ module Workaround
       def self.find_by_slug(slug)
         # mocked method until we make a desicion about where the post source will be
         new({
-          :title => slug.humanize,
+          :title => slug.underscore.humanize,
           :created_at => (Date.today - 2.days).to_s,
           :abstract => "Na na na",
           :author => %w(uke aboyon leo guido gonzo).sample
