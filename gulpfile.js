@@ -7,10 +7,10 @@ var runSequence = require('gulp-run-sequence');
 
 gulp.task('compress_library_js', function() {
   return gulp.src([
-    'public/js/jquery.min.js',
-    'public/js/bootstrap.min.js',
-    'public/js/modernizr-2.6.2.min.js',
-    'public/js/main.js'
+    'assets/js/jquery.min.js',
+    'assets/js/bootstrap.min.js',
+    'assets/js/modernizr-2.6.2.min.js',
+    'assets/js/main.js'
   ])
   .pipe(concat('core.min.js'))
   .pipe(gulp.dest('public/js'));
@@ -18,10 +18,10 @@ gulp.task('compress_library_js', function() {
 
 gulp.task('compress_css', function () {
   gulp.src([
-    'public/css/icomoon.css',
-    'public/css/style.css',
-    'public/css/override.css',
-    'public/css/workaround.css'
+    'assets/css/icomoon.css',
+    'assets/css/style.css',
+    'assets/css/override.css',
+    'assets/css/workaround.css'
   ])
     .pipe(minify_css({compatibility: 'ie8'}))
     .pipe(concat('all.min.css', {newLine: '\n\n'}))

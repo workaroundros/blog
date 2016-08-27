@@ -1,6 +1,11 @@
 <% @title = @post.title %>
-<p class="post-info">Escrito el: <%= @post.created_at.to_s %>, Autor: <%= @post.author %></p>
-<p><%= @post.body %></p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    Escrito el: <span class="label label-default"><%= @post.created_at.to_s %></span>, Autor: <span class="label label-warning"><%= @post.author %></span>
+  </div>
+</div>
+<div class="blog-body"><%= @post.body %></div>
 <hr>
 <div id="disqus_thread"></div>
 <script>

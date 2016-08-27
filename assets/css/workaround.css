@@ -20,3 +20,8 @@
   font-family: "Montserrat", arial, sans-serif;
   color: #ccc;
 }
+
+.blog-body p {
+  color:#666;
+  font-size:21px;
+}
