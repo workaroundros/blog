@@ -1,48 +1,52 @@
+require 'nokogiri'
+require 'active_support/core_ext/string'
+require 'active_support/core_ext/numeric/time'
+
 module Workaround
   module Blog
     class Post
       include ActiveSupport::Inflector
-      attr_accessor :author, :abstract, :created_at, :title
+      attr_accessor :author, :abstract, :created_at, :title, :file, :period
 
-      def initialize(params)
-        @title = params[:title]
-        @abstract = params[:abstract]
-        @created_at = Date.parse(params[:created_at])
-        @author = params[:author]
-      end
+      ARTICLES_FOLDER = "blog-articles"
 
       def slug
-        title.to_s.downcase.underscore.gsub(' ','_').dasherize
+        title.to_s.strip.downcase.underscore.gsub(' ','_').dasherize
       end
 
       def body
-        # read this body content from an static file
-        # something like File.read('some-file')
-        "This is the post body "*(500)
+        File.read(file)
       end
 
-      def self.all
-        # mocked method until we make a desicion about where the post source will be
+      def self.all(year = Date.today.year)
         [].tap do |posts|
-          10.times do |x|
-            posts << new({
-              :title      => "Post title #{x}",
-              :created_at => (Date.today).to_s,
-              :author => %w(uke aboyon leo guido gonzo).sample,
-              :abstract => "Abstract content "*(100),
-            })
+          Dir.glob("#{ARTICLES_FOLDER}/#{year}/*.html").map do |article|
+            posts << parse_post(article)
           end
         end
       end
 
       def self.find_by_slug(slug)
-        # mocked method until we make a desicion about where the post source will be
-        new({
-          :title => slug.underscore.humanize,
-          :created_at => (Date.today - 2.days).to_s,
-          :abstract => "Na na na",
-          :author => %w(uke aboyon leo guido gonzo).sample
-        })
+        parse_post("#{ARTICLES_FOLDER}/#{slug.strip.downcase}.html")
+      end
+
+      def self.parse_post(file)
+        doc = File.open(file) { |f| Nokogiri::HTML(f) }
+        metadata = doc.xpath('//comment()')
+        new.tap do |post|
+          post.file = file
+          post.period = File.basename(File.dirname(file))
+          post.abstract = doc.xpath('//p').first.text
+          if metadata
+            post.title = metadata[0].text.strip
+            post.author = metadata[1].text.strip
+            post.created_at = Date.parse(metadata[2].text.strip)
+          end
+        end
+      end
+
+      def self.count(year)
+        Dir.glob("#{ARTICLES_FOLDER}/#{year}/*.html").size
       end
 
     end

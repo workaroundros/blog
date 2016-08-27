@@ -1,0 +1,26 @@
+<h3 class="alternative_header">Blog retro. Articulos desde el archivero del abuelo...</h2>
+
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <h1><a href="/<%= post.period %>/<%= post.slug %>"><%= post.title %></a></h1>
+    <p class="post-info">Escrito el: <%= post.created_at.to_s %>, Autor: <%= post.author %></p>
+    <p><%= post.abstract %></p>
+  <% end %>
+<% else %>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Se ve que durante el este periodo de tiempo, teniamos seca la cabeza. Aca no hay nada por el momento, un bajon, es como cuando vas a correo y no hay nada para vos...</p>
+    </div>
+    <div class="col-md-6">
+      <p>Fijate en alguno de estos periodos de tiempo.. quizas encontres algo ahi:</p>
+      <ul class="list-group">
+      <% (2016..Date.today.year).each do |year| %>
+        <li class="list-group-item">
+          <span class="badge"><%= Workaround::Blog::Post.count(year) %></span>
+          <a href="/archive/<%= year %>">A&ntilde;o <%= year %></a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

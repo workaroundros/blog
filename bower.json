@@ -1,0 +1,19 @@
+{
+  "name": "workaround-blog",
+  "version": "1.0.0",
+  "description": "TODO",
+  "authors": [
+    "David Silveira"
+  ],
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "gulpfile.js",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "bootstrap": "~3.1.1"
+  }
+}

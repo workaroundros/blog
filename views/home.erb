@@ -1,5 +1,9 @@
-<% @posts.each do |post| %>
-  <h1><a href="/read/<%= post.slug %>"><%= post.title %></a></h1>
-  <p class="post-info">Escrito el: <%= post.created_at.to_s %>, Autor: <%= post.author %></p>
-  <p><%= post.abstract %></p>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <h1><a href="/<%= post.period %>/<%= post.slug %>"><%= post.title %></a></h1>
+    <p class="post-info">Escrito el: <%= post.created_at.to_s %>, Autor: <%= post.author %></p>
+    <p><%= post.abstract %></p>
+  <% end %>
+<% else %>
+  <p align="center">No se nos ocurrio nada para escribir todavia pero ya vamos a tener algo</p>
 <% end %>
