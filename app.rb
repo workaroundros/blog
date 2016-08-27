@@ -15,7 +15,8 @@ Cuba.use Rack::Static, :root => "public", :urls => [
   "/images",
   "/fonts",
   "/google7d901f8d08713472.html",
-  "/robots.txt"
+  "/robots.txt",
+  "/favicon.ico"
 ]
 
 Cuba.define do
