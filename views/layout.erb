@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<%= (@post) ? "#{@post.abstract}" : "Workaround Blog - Coworking en Rosario - Espacio compartido de trabajo - Shared office space" %>" />
   <meta name="keywords" content="<%= (@post) ? "#{@post.abstract.split(' ').join(',').gsub(',,',',')}" : "Workaround Blog - Coworking en Rosario - Espacio compartido de trabajo - Shared office space" %>" />
-  <meta name="author" content="Workaround.com.ar" />
+  <meta name="author" content="<%= (@post) ? "By #{@post.author} on behalf of Workaround.com.ar" : "Workaround.com.ar" %>" />
   <link rel="shortcut icon" href="/favicon.ico">
   <meta http-equiv="cache-control" content="max-age=604800" />
 

@@ -32,8 +32,14 @@ Cuba.define do
     end
 
     on ":period/:slug" do |period, slug|
-      @post = Workaround::Blog::Post.find_by_slug("#{period}/#{slug}")
-      render("post")
+      begin
+        @post = Workaround::Blog::Post.find_by_slug("#{period}/#{slug}")
+        render("post")
+      rescue Errno::ENOENT
+        res.status = 404
+        @title = "Mmmm no podemos encontrar el articulo"
+        render("not_found")
+      end
     end
 
     on true do
